@@ -50,6 +50,8 @@ if dcard1 == "A":
 if dcard2 == "A":
     daces += 1
 
+phand2 = phand
+
 print(f"""
 ---------------------------------------------
 The player got a:
@@ -72,6 +74,7 @@ while phand < 21:
         ecard = shoe.pop(0)
         intecard = int(values[ecard])
         phand = phand + intecard
+        phand = phand
         print(f"""You got a 
 {ecard} 
 your total is now 
