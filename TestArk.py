@@ -31,6 +31,7 @@ phand = intpcard1 + intpcard2
 dhand = intdcard1 + intdcard2
 pbust = False
 dbust = False
+end = False
 
 # If you spawn with 2 aces
 if phand > 21:
@@ -53,98 +54,119 @@ if dcard2 == "A":
 phand2 = phand
 
 print(f"""
----------------------------------------------
-The player got a:
-{pcard1} 
-and a: 
-{pcard2}
-for a combined hand of:
-{phand}
+----------------------------
+         Welcome to:
+        *Black Jack*
 
-The dealer shows you one of his cards: 
-{dcard2}
+         by Kaspar
+----------------------------
+""")
+
+print(f"""
+---------------------------------------------
+The player got a:\n{pcard1}""")
+
+print(f"\nand a:\n{pcard2}\n")
+
+print(f"for a combined hand of:\n{phand}\n")
+
+print(f"""The dealer shows you one of his cards:\n{dcard2}
 ---------------------------------------------
 """)
 
-# Player Hit and Stand loop
-while phand < 21:
-    action = str(input("""press h to hit or s to stand
-    """).lower())
-    if action == "h":
-        ecard = shoe.pop(0)
-        intecard = int(values[ecard])
-        phand = phand + intecard
-        phand = phand
-        print(f"""You got a 
-{ecard} 
-your total is now 
-{phand}""")
-    elif action == "s":
+try:
+    # Player Hit and Stand loop
+    while phand < 21:
+        action = str(input("""press h to hit or s to stand
+        """).lower())
+        if action == "h":
+            ecard = shoe.pop(0)
+            intecard = int(values[ecard])
+            phand = phand + intecard
+            print(f"You got a\n{ecard}")
+
+            # Player: Bust and Aces if statement
+            if phand > 21:
+                if paces > 0:
+                    paces -= 1
+                    phand -= 10
+                    print("Your Ace turned into a 1")
+                else:
+                    pbust = True
+
             phand = phand
-            break
+            print(f"your total is now\n{phand}")
+        elif action == "s":
+                phand = phand
+                break
 
-# Player: Bust and Aces if statement
-if phand > 21:
-    if paces > 0:
-        paces -= 1
-        phand -= 10
-    else:
-        pbust = True
 
-else:
-    print(f"""The dealer flips over his hidden card: 
-{dcard1}
-combined with his previous card: 
-{dcard2} 
-the dealer has a hand of: 
-{dhand}
+
+    if pbust == False:
+        print(f"The dealer flips over his hidden card:\n{dcard1}\ncombined with his previous card:\n{dcard2}\nthe dealer has a hand of:\n{dhand}\n")
+
+    # Dealer draw loop
+        while dhand < 17:
+            ecard = shoe.pop(0)
+            intecard = int(values[ecard])
+            dhand = dhand + intecard
+            print(f"Dealer got a\n{ecard}")
+                # Dealer: Bust and Aces if statement
+            if dhand > 21:
+                if daces > 0:
+                    daces -= 1
+                    dhand -= 10
+                    print("The Dealers Ace turned into a 1")
+                else:
+                    dbust = True
+
+            print(f"the dealers total is now\n{dhand}")
+
+except KeyboardInterrupt:
+    end = True
+    print("""
+---------------------
+Black Jack has ended.
+---------------------
 """)
 
-# Dealer draw loop
-    while dhand < 17:
-        ecard = shoe.pop(0)
-        intecard = int(values[ecard])
-        dhand = dhand + intecard
-        print(f"Dealer got a {ecard}, the dealers total is now {dhand}")
-
-# Dealer: Bust and Aces if statement
-        if dhand > 21:
-            if daces > 0:
-                daces -= 1
-                dhand -= 10
-            else:
-                dbust = True
-
-wlend = True
-
-if pbust == True:
-    print(f"""
+if end == False:
+    if pbust == True:
+        print(f"""
 ----------------------------------------------------------------
-                  You got over 21 and busted
-                          *You lose*        
+                You got over 21 and busted
+                       *You lose*        
 ----------------------------------------------------------------
 """) 
 
-elif dbust == True:
-    print(f"""
+    elif dbust == True:
+        print(f"""
 ----------------------------------------------------------------
-               The dealer got over 21 and busted
-                          *You win*
+            The dealer got over 21 and busted
+                        *You win*
 ----------------------------------------------------------------
 """) 
 
-elif phand > dhand:
-    print(f"""
+    elif phand > dhand:
+        print(f"""
 ----------------------------------------------------------------
 Your hand of {phand} is greater than the dealers hand of {dhand}
-                         *You win*
+                        *You win*
 ----------------------------------------------------------------
 """)
 
-elif dhand > phand:
-     print(f"""
+    elif dhand > phand:
+        print(f"""
 ----------------------------------------------------------------
 The dealers hand of {dhand} is greater than your hand of {phand}
-                         *You lose*
+                        *You lose*
+----------------------------------------------------------------
+""")
+
+    elif phand == dhand:
+        print(f"""
+----------------------------------------------------------------
+        Both you and the Dealer got a hand of {phand}
+                        *Push*
 ----------------------------------------------------------------
 """)
