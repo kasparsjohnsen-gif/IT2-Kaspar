@@ -20,6 +20,7 @@ else:
     print(f"Du valgte {valgt_frukt}.")
 """
 
+
 liste = list(range(1,12))
 gyldig = False
 

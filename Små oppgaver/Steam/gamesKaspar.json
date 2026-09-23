@@ -1,0 +1,651 @@
+{
+  "antall_spill": 74,
+  "spill": [
+    {
+      "appid": 400,
+      "name": "Portal",
+      "playtime_forever": 224,
+      "img_icon_url": "cfa928ab4119dd137e50d728e8fe703e4e970aff",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 3.7
+    },
+    {
+      "appid": 620,
+      "name": "Portal 2",
+      "playtime_forever": 1321,
+      "img_icon_url": "25a5a16b2423bf7487ac5340b5b0948cef48c5f8",
+      "has_community_visible_stats": true,
+      "has_leaderboards": true,
+      "playtime_forever_hours": 22.0
+    },
+    {
+      "appid": 730,
+      "name": "Counter-Strike 2",
+      "playtime_2weeks": 72,
+      "playtime_forever": 13614,
+      "img_icon_url": "8dbc71957312bbd3baea65848b545be9eae2a355",
+      "has_community_visible_stats": true,
+      "content_descriptorids": [
+        2,
+        5
+      ],
+      "playtime_forever_hours": 226.9
+    },
+    {
+      "appid": 105600,
+      "name": "Terraria",
+      "playtime_forever": 24125,
+      "img_icon_url": "858961e95fbf869f136e1770d586e0caefd4cfac",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 402.1
+    },
+    {
+      "appid": 236390,
+      "name": "War Thunder",
+      "playtime_forever": 437,
+      "img_icon_url": "c69fbafb6e9891314cc5df0fe6a659612c289bf9",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 7.3
+    },
+    {
+      "appid": 240720,
+      "name": "Getting Over It with Bennett Foddy",
+      "playtime_forever": 221,
+      "img_icon_url": "161090eb78acf2e28333e8ae182121d906f1ee85",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 3.7
+    },
+    {
+      "appid": 242760,
+      "name": "The Forest",
+      "playtime_forever": 251,
+      "img_icon_url": "3a6847f6ac5879e48531db52261771d5e22904ac",
+      "has_community_visible_stats": true,
+      "content_descriptorids": [
+        1,
+        2,
+        5
+      ],
+      "playtime_forever_hours": 4.2
+    },
+    {
+      "appid": 252490,
+      "name": "Rust",
+      "playtime_2weeks": 706,
+      "playtime_forever": 76846,
+      "img_icon_url": "820be4782639f9c4b64fa3ca7e6c26a95ae4fd1c",
+      "has_community_visible_stats": true,
+      "content_descriptorids": [
+        1,
+        2,
+        5
+      ],
+      "playtime_forever_hours": 1280.8
+    },
+    {
+      "appid": 268910,
+      "name": "Cuphead",
+      "playtime_forever": 591,
+      "img_icon_url": "c19f1bd916b6d171e94089d03112ec4e4e4da84e",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 9.8
+    },
+    {
+      "appid": 294100,
+      "name": "RimWorld",
+      "playtime_forever": 936,
+      "img_icon_url": "addbe3b704b267060b4d5d7649cfb292de61bd70",
+      "playtime_forever_hours": 15.6
+    },
+    {
+      "appid": 306020,
+      "name": "Bloons TD5",
+      "playtime_forever": 4032,
+      "img_icon_url": "b584e669fff85196944f692bebce56200d52bd92",
+      "has_community_visible_stats": true,
+      "has_leaderboards": true,
+      "playtime_forever_hours": 67.2
+    },
+    {
+      "appid": 322170,
+      "name": "Geometry Dash",
+      "playtime_forever": 18423,
+      "img_icon_url": "7fb2e71773468dbd98d56c733b604c92f5ab0ad4",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 307.1
+    },
+    {
+      "appid": 332800,
+      "name": "Five Nights at Freddy's 2",
+      "playtime_forever": 244,
+      "img_icon_url": "94d87ac302559e7742905416bab1cf1af530a974",
+      "playtime_forever_hours": 4.1
+    },
+    {
+      "appid": 346010,
+      "name": "Besiege",
+      "playtime_forever": 395,
+      "img_icon_url": "16667f445723c720782314269e41f9daa8a7fb56",
+      "has_community_visible_stats": true,
+      "content_descriptorids": [
+        2,
+        5
+      ],
+      "playtime_forever_hours": 6.6
+    },
+    {
+      "appid": 359550,
+      "name": "Tom Clancy's Rainbow Six Siege",
+      "playtime_2weeks": 102,
+      "playtime_forever": 645,
+      "img_icon_url": "624745d333ac54aedb1ee911013e2edb7722550e",
+      "has_community_visible_stats": true,
+      "content_descriptorids": [
+        5
+      ],
+      "playtime_forever_hours": 10.8
+    },
+    {
+      "appid": 383870,
+      "name": "Firewatch",
+      "playtime_forever": 249,
+      "img_icon_url": "d13e70a08cab192c52104f315a7d68591c085e81",
+      "has_community_visible_stats": true,
+      "content_descriptorids": [
+        1,
+        5
+      ],
+      "playtime_forever_hours": 4.2
+    },
+    {
+      "appid": 391540,
+      "name": "Undertale",
+      "playtime_forever": 954,
+      "img_icon_url": "2ce672b89b63ec1e70d2f12862e72eb4a33e9268",
+      "playtime_forever_hours": 15.9
+    },
+    {
+      "appid": 431960,
+      "name": "Wallpaper Engine",
+      "playtime_forever": 1799,
+      "img_icon_url": "72edaed9d748c6cf7397ffb1c83f0b837b9ebd9d",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 30.0
+    },
+    {
+      "appid": 489630,
+      "name": "Warhammer 40,000: Gladius - Relics of War",
+      "playtime_forever": 0,
+      "img_icon_url": "ba6ea4fbeec62073763e103450e8aa7c5373d010",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 0.0
+    },
+    {
+      "appid": 508440,
+      "name": "Totally Accurate Battle Simulator",
+      "playtime_forever": 2586,
+      "img_icon_url": "50fbd075b1cbb63ab805d9e49bbe6c57c5c6e9ff",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 43.1
+    },
+    {
+      "appid": 582660,
+      "name": "Black Desert",
+      "playtime_forever": 53,
+      "img_icon_url": "bf5ccace0a692720984827bf042143d0d4b28a42",
+      "content_descriptorids": [
+        1,
+        5
+      ],
+      "playtime_forever_hours": 0.9
+    },
+    {
+      "appid": 597170,
+      "name": "Clone Drone in the Danger Zone",
+      "playtime_forever": 2181,
+      "img_icon_url": "2c09e97d9c2ded6c73d3502ef2121bfdcb5aee61",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 36.4
+    },
+    {
+      "appid": 610080,
+      "name": "Realm Grinder",
+      "playtime_forever": 8,
+      "img_icon_url": "67df032543bc5c8b24c2e704a63e11f3b2c1e926",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 0.1
+    },
+    {
+      "appid": 648800,
+      "name": "Raft",
+      "playtime_forever": 4181,
+      "img_icon_url": "6a9ae357c4133b1b631b520edd25b1974f3afb68",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 69.7
+    },
+    {
+      "appid": 815370,
+      "name": "Green Hell",
+      "playtime_forever": 652,
+      "img_icon_url": "d118d766ef0107189e71b1410bebe13831b70d7b",
+      "has_community_visible_stats": true,
+      "content_descriptorids": [
+        5
+      ],
+      "playtime_forever_hours": 10.9
+    },
+    {
+      "appid": 892970,
+      "name": "Valheim",
+      "playtime_2weeks": 1229,
+      "playtime_forever": 22291,
+      "img_icon_url": "2f64c9a826e2c6cf3253fea4834c2e612db09143",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 371.5
+    },
+    {
+      "appid": 960090,
+      "name": "Bloons TD 6",
+      "playtime_forever": 2384,
+      "img_icon_url": "c5f0b67c8beeb6be99abe2ad8db2cada5d5ccff0",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 39.7
+    },
+    {
+      "appid": 979920,
+      "name": "Supremacy 1914",
+      "playtime_forever": 186,
+      "img_icon_url": "820d6f6a5cafeeb16c2845e763411d39d5cfdabe",
+      "content_descriptorids": [
+        5
+      ],
+      "playtime_forever_hours": 3.1
+    },
+    {
+      "appid": 1128810,
+      "name": "RISK: Global Domination",
+      "playtime_forever": 33,
+      "img_icon_url": "ecc6f7301e88a88e93edec1a3d4ddcc7ec9c5335",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 0.6
+    },
+    {
+      "appid": 1172620,
+      "name": "Sea of Thieves",
+      "playtime_forever": 1980,
+      "img_icon_url": "f95f362708fc326511c5d86566c447ee625bf776",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 33.0
+    },
+    {
+      "appid": 1174180,
+      "name": "Red Dead Redemption 2",
+      "playtime_forever": 16161,
+      "img_icon_url": "5106abd9c1187a97f23295a0ba9470c94804ec6c",
+      "has_community_visible_stats": true,
+      "content_descriptorids": [
+        5
+      ],
+      "playtime_forever_hours": 269.4
+    },
+    {
+      "appid": 1241700,
+      "name": "There is no game: Jam Edition 2015",
+      "playtime_forever": 19,
+      "img_icon_url": "05bd3ff3a36a05b099cca926b421e9905e475f04",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 0.3
+    },
+    {
+      "appid": 1281930,
+      "name": "tModLoader",
+      "playtime_forever": 19741,
+      "img_icon_url": "e8a125078a31b8475994e8ce4d8d6fdd6becc131",
+      "playtime_forever_hours": 329.0
+    },
+    {
+      "appid": 1366800,
+      "name": "Crosshair X",
+      "playtime_2weeks": 2272,
+      "playtime_forever": 32378,
+      "img_icon_url": "16138bef561b61372e02f3006da2c76a21cdbbd7",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 539.6
+    },
+    {
+      "appid": 1454400,
+      "name": "Cookie Clicker",
+      "playtime_2weeks": 86,
+      "playtime_forever": 269687,
+      "img_icon_url": "e0c68bbdb2813528f0802ef6751655e33a42c9bb",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 4494.8
+    },
+    {
+      "appid": 1456200,
+      "name": "Initial Drift Online",
+      "playtime_forever": 0,
+      "img_icon_url": "8cf914628b765f7e1c681e127f85dd96ee8224b8",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 0.0
+    },
+    {
+      "appid": 1474700,
+      "name": "MONOPOLY Poker",
+      "playtime_forever": 61,
+      "img_icon_url": "1330949c2110d65a9393d68782d8871fca2329ac",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 1.0
+    },
+    {
+      "appid": 1476970,
+      "name": "IdleOn - The Incremental MMO",
+      "playtime_forever": 12,
+      "img_icon_url": "8eae2b19c35dc4319a58ec553e4fb28f8eb60e84",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 0.2
+    },
+    {
+      "appid": 1557740,
+      "name": "ROUNDS",
+      "playtime_forever": 3212,
+      "img_icon_url": "f087183f42804b06bcd59b47536c23b398061fc1",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 53.5
+    },
+    {
+      "appid": 1557990,
+      "name": "Retail Royale",
+      "playtime_forever": 14,
+      "img_icon_url": "d27b6eae14c5def08b641519c33726ccfbcf89fc",
+      "has_community_visible_stats": true,
+      "has_leaderboards": true,
+      "playtime_forever_hours": 0.2
+    },
+    {
+      "appid": 1562430,
+      "name": "DREDGE",
+      "playtime_forever": 1010,
+      "img_icon_url": "c8b352e87c28aa9ffe3a4641b230beb5064a49e6",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 16.8
+    },
+    {
+      "appid": 1575870,
+      "name": "UpGun",
+      "playtime_forever": 1019,
+      "img_icon_url": "8710c07d892e9068e9f33019589b4bd4d2308584",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 17.0
+    },
+    {
+      "appid": 1625450,
+      "name": "Muck",
+      "playtime_forever": 2891,
+      "img_icon_url": "a123e3d10527fbdf3fea7ea235e11b41da3754dc",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 48.2
+    },
+    {
+      "appid": 1628620,
+      "name": "World Boss",
+      "playtime_forever": 1401,
+      "img_icon_url": "90aab0a27b340d15600214a0175160678354f2bb",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 23.4
+    },
+    {
+      "appid": 1677740,
+      "name": "Stumble Guys",
+      "playtime_forever": 186,
+      "img_icon_url": "4517b0a1eff3befd699ede64a57e3f816d581be7",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 3.1
+    },
+    {
+      "appid": 1782210,
+      "name": "Crab Game",
+      "playtime_forever": 15,
+      "img_icon_url": "e1afdaf96f55771d1d5ea4c9692d0f707ab0110b",
+      "content_descriptorids": [
+        5
+      ],
+      "playtime_forever_hours": 0.2
+    },
+    {
+      "appid": 1824220,
+      "name": "Chivalry 2",
+      "playtime_forever": 3686,
+      "img_icon_url": "c3f16bfc0ab3bed369a63309e1f0e33d3f9ccce5",
+      "has_community_visible_stats": true,
+      "content_descriptorids": [
+        2,
+        5
+      ],
+      "playtime_forever_hours": 61.4
+    },
+    {
+      "appid": 1922560,
+      "name": "Plants vs. Zombies™ Garden Warfare 2: Deluxe Edition",
+      "playtime_forever": 1144,
+      "img_icon_url": "fc6f1e8686ad5b42e270ea1ce592e30b5f77ef25",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 19.1
+    },
+    {
+      "appid": 1942280,
+      "name": "Brotato",
+      "playtime_forever": 1603,
+      "img_icon_url": "d9dfcab8f300a9548439f70bef7b5f4e53d0fc28",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 26.7
+    },
+    {
+      "appid": 1943950,
+      "name": "Escape the Backrooms",
+      "playtime_forever": 1792,
+      "img_icon_url": "2bd4431dd3b71ea7fd11cbcef9594f0d09e4079d",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 29.9
+    },
+    {
+      "appid": 1962700,
+      "name": "Subnautica 2",
+      "playtime_forever": 650,
+      "img_icon_url": "a6810ae79dc1592fdd890f463311cb5b8df8aa3c",
+      "playtime_forever_hours": 10.8
+    },
+    {
+      "appid": 1966720,
+      "name": "Lethal Company",
+      "playtime_forever": 7275,
+      "img_icon_url": "80d2453285274e4723c884a671cdd3f8fe2f766f",
+      "content_descriptorids": [
+        2,
+        5
+      ],
+      "playtime_forever_hours": 121.2
+    },
+    {
+      "appid": 1977530,
+      "name": "One-armed cook",
+      "playtime_forever": 18,
+      "img_icon_url": "432f7c9b7de50ad808f1d7f7718bbe9617798b50",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 0.3
+    },
+    {
+      "appid": 2021910,
+      "name": "FPS Chess",
+      "playtime_forever": 483,
+      "img_icon_url": "e1508ba473fcaead2dd490776954e4d730a54aab",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 8.1
+    },
+    {
+      "appid": 2139460,
+      "name": "Once Human",
+      "playtime_forever": 267,
+      "img_icon_url": "e1c29227c162232120c15edcf282df61ee35f091",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 4.5
+    },
+    {
+      "appid": 2141730,
+      "name": "Backrooms: Escape Together",
+      "playtime_forever": 292,
+      "img_icon_url": "d4b430f9594dcad772f320fe8792b2c94cf99e06",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 4.9
+    },
+    {
+      "appid": 2239140,
+      "name": "Grapples Galore",
+      "playtime_forever": 219,
+      "img_icon_url": "1378e69c1d69c3d7277fc4cb677ca5af79f73d6f",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 3.6
+    },
+    {
+      "appid": 2250040,
+      "name": "Crosshair V2",
+      "playtime_forever": 7876,
+      "img_icon_url": "7e534fde2bed17e2114d7c110910296174328891",
+      "playtime_forever_hours": 131.3
+    },
+    {
+      "appid": 2406770,
+      "name": "Bodycam",
+      "playtime_2weeks": 285,
+      "playtime_forever": 285,
+      "img_icon_url": "793bf9dd10a0c8838879adca10459e77e1f02c51",
+      "has_community_visible_stats": true,
+      "has_leaderboards": true,
+      "content_descriptorids": [
+        2,
+        5
+      ],
+      "playtime_forever_hours": 4.8
+    },
+    {
+      "appid": 2494960,
+      "name": "Bopl Battle Demo",
+      "playtime_forever": 651,
+      "img_icon_url": "9bf60950c269138fa7194c6c42f6bbee4d039f90",
+      "playtime_forever_hours": 10.8
+    },
+    {
+      "appid": 2551020,
+      "name": "One-armed robber",
+      "playtime_forever": 45,
+      "img_icon_url": "810402b02588c37cc459b1a39896ab9377ba616a",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 0.8
+    },
+    {
+      "appid": 2587450,
+      "name": "Tank Team",
+      "playtime_forever": 106,
+      "img_icon_url": "d00110233789468dbc2aca324157fe50facf9e20",
+      "playtime_forever_hours": 1.8
+    },
+    {
+      "appid": 2709570,
+      "name": "Supermarket Together",
+      "playtime_forever": 140,
+      "img_icon_url": "df024275a7ba53c79008b45c0d74b4a2e6a2069b",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 2.3
+    },
+    {
+      "appid": 2767030,
+      "name": "Marvel Rivals",
+      "playtime_forever": 10925,
+      "img_icon_url": "839b4712925b95702ca56e0c4d399adf54f4d617",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 182.1
+    },
+    {
+      "appid": 2994020,
+      "name": "Puck",
+      "playtime_forever": 25,
+      "img_icon_url": "a41908e104d645dce461bd84b3d94e83c1d32ec8",
+      "playtime_forever_hours": 0.4
+    },
+    {
+      "appid": 3164500,
+      "name": "Schedule I",
+      "playtime_forever": 3165,
+      "img_icon_url": "3d9f9ed56cb6e1ba995883207290c39674e9c411",
+      "has_community_visible_stats": true,
+      "content_descriptorids": [
+        5
+      ],
+      "playtime_forever_hours": 52.8
+    },
+    {
+      "appid": 3314790,
+      "name": "CloverPit",
+      "playtime_forever": 376,
+      "img_icon_url": "93fcc4d2c3798356f019f030e7599dc13bd6a95a",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 6.3
+    },
+    {
+      "appid": 3405340,
+      "name": "Megabonk",
+      "playtime_forever": 3199,
+      "img_icon_url": "8e0ff36cdb1076d69347a2796c7ef5ee18b2fee8",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 53.3
+    },
+    {
+      "appid": 3419430,
+      "name": "Bongo Cat",
+      "playtime_forever": 12722,
+      "img_icon_url": "b25d4b846c745bdf809f5657af00298e0ae62465",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 212.0
+    },
+    {
+      "appid": 3483740,
+      "name": "Cast n Chill",
+      "playtime_forever": 825,
+      "img_icon_url": "43d2abadc9e6e299f4ba92db1676bafb9ec4438a",
+      "has_community_visible_stats": true,
+      "playtime_forever_hours": 13.8
+    },
+    {
+      "appid": 3520070,
+      "name": "Megabonk Demo",
+      "playtime_forever": 408,
+      "img_icon_url": "2455195891174512906a50c75b653395cb9a7709",
+      "playtime_forever_hours": 6.8
+    },
+    {
+      "appid": 3716600,
+      "name": "Mage Arena",
+      "playtime_forever": 28,
+      "img_icon_url": "46a9d7edea98cc637b327ee188a5d1524f32448e",
+      "content_descriptorids": [
+        2,
+        5
+      ],
+      "playtime_forever_hours": 0.5
+    },
+    {
+      "appid": 4124780,
+      "name": "Scritchy Scratchy Demo",
+      "playtime_forever": 700,
+      "img_icon_url": "dbc0f0af8d59826ff370f613098192e11609e8f4",
+      "playtime_forever_hours": 11.7
+    },
+    {
+      "appid": 4704690,
+      "name": "MECCHA CHAMELEON",
+      "playtime_forever": 745,
+      "img_icon_url": "fbef288370f6ae51cb0a5066d7fb13d26147c94a",
+      "playtime_forever_hours": 12.4
+    }
+  ]
+}
