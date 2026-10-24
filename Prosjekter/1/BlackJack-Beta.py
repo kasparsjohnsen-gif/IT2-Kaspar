@@ -5,7 +5,7 @@ import time as t
 values = {"2" : 2, "3" : 3, "4" : 4, "5" : 5, "6" : 6, "7" : 7, "8" : 8, "9" : 9, "10" : 10, "J" : 10, "Q" : 10, "K" : 10, "A" : 11}
 
 shoe = []
-maxbet_str: list = ["m", "max"]
+maxbet_str: list = ["m", "max", "M", "Max", "maxbet"]
 
 for key in values.keys():
     for k in range(0, 16):
@@ -114,8 +114,8 @@ while chips < 1000 and chips > 0:
     try:
         # Player Hit and Stand loop
         while phand < 21:
-            action = str(input("""press h to hit or s to stand
-    """).lower())
+            action = input("""press h to hit or s to stand
+    """).lower()
             if action == "h":
                 t.sleep(0.5)
                 print("\nYou chose to hit\n")
@@ -240,4 +240,4 @@ else:
 
 # add jack black hvis du får black jack med en jack du får 300%
 # hvis dealer får jack black miste 150%
-# add jack vblack sqart
+# add jack black sqart
