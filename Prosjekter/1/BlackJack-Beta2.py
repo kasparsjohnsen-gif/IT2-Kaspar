@@ -66,7 +66,10 @@ class Opponents:
         self.hand.append(self.card)
         self.inthand.append(self.intcard)
 
-    def bustaces(self):
+    def checkforace(self):
+        print()
+
+    def bustornot(self):
         if self.inthand > 21:
             if 1 == 1:
                 1
