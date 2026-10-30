@@ -18,7 +18,7 @@ NPCene blir puttet i tre grupper:
 **Costumers**: de vil primert kjøpe ting fra deg.
 **Deal makers**: de vil bare gi deg en spesifikk deal som kan ha noe å si med pengene dine eller itemsene dine.
 
-Sjansen for at du greier å overselle eller underpaye kommer an på charisma staten din, prestige staten din og hvilke trait NPCen har
+Sjansen for at du greier å overselle eller underpaye kommer an på persuasion staten din, prestige staten din og hvilke trait NPCen har
 
 Traits er additional stats en NPC kan ha som sier noe om hvor lett og hvor mye du kan hagle med dem.
 
@@ -26,7 +26,7 @@ Traits er additional stats en NPC kan ha som sier noe om hvor lett og hvor mye d
 
 **Itemstats**
 Items har en base-sellvalue og en base-buyvalue.
-Items kan også ha enten en pristige stat eller en charizma stat.
+Items kan også ha enten en pristige stat eller en persuasion stat.
 
 
 **Raritys:**

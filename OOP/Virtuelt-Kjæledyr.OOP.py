@@ -82,9 +82,9 @@ while True:
 
     if valg == "0":
         break
-    elif valg == "5":
+    elif valg == "4":
         dyrene.append(Kjaeledyr(input("Navn på det nye dyret: ")))
-    elif valg in ["1", "2", "3", "4"]:
+    elif valg in ["1", "2", "3"]:
         dyr = velg_dyr(dyrene)
         if dyr is None:
             continue
