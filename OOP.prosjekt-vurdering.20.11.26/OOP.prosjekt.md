@@ -1,4 +1,3 @@
-
 # **Your local shop**
 
 ## **Gameplay:**
@@ -47,13 +46,38 @@ commen, uncommen, rare, legendary
 *SnowGlobe* 'Furniture' - Buy: 4g - sell: 2g - Info: Øker sell value med 1g per dag som går
 
 **Rare items:**
-*Fedora* 'Clothing' - Buy: 8g - sell: 6g - Øker sjansen din for å kunne underpaye/overselle
+*Fedora* 'Clothing' - Buy: 10g - sell: 6g - persuasion 25
 *Life-sized SnowGlobe* 'Furniture' - Buy: 10g - sell: 6g - Info: Øker sell value med 3g per dag som går
 
 **Legendary items:**
-*Cactus* 'Furniture' - Buy: 12g - sell: 8g - The ghost cant steal any items
+*Cactus* 'Furniture' - Buy: 20g - sell: 14g - prestige 50 - Info: 
 
 
+# **Krav til spillet**
+## Minst tre egne klasser, der hver klasse har attributter og metoder som hører naturlig til den.
+
+Arv: Minst én klasse skal arve fra en annen klasse og bruke super(). Subklassen skal enten legge
+til noe nytt eller overstyre minst én metode.
+
+Objekter som samarbeider: Objektene skal bruke eller endre hverandre. For eksempel kan en spiller angripe en fiende, eller en bank kan ha mange kontoer.
+
+Mange objekter samlet i en liste eller en dictionary, som programmet går gjennom med en løkke.
+
+Brukerinput, for eksempel en meny der brukeren velger hva som skal skje.
+
+Feilhåndtering: Programmet skal ikke krasje hvis brukeren skriver noe ugyldig.
+
+Lesbar kode: gode navn på klasser, metoder og variabler, og kommentarer der det ikke er åpenbart hva koden gjør.
+
+## I tillegg skal du lage:
+
+Et klassediagram som viser klassene dine med attributter og metoder, og hvilke klasser som arver fra hverandre. Du kan tegne det på papir, i et tegneprogram eller i en README.md. Se eksempelet under.
+
+En README.md i prosjektmappa di som
+forklarer hva programmet gjør og hvordan det kjøres
+hvilke kilder du har brukt (nettsider, eksempelkode og lignende)
+hvordan du har brukt KI (se Bruk av KI)
+en kort oppsummering av hva du har gjort, når (logg)
 
 
 # **Logg** 
