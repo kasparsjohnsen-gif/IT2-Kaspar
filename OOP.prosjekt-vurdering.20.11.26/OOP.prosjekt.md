@@ -83,3 +83,29 @@ en kort oppsummering av hva du har gjort, når (logg)
 # **Logg** 
 27.10.26
 planlegging av spillet
+
+# **Kilder**
+## KI
+### Claude
+**05.11.2026**
+Spurte Claude om en måte å kunne velge et tilfeldig navn fra en txtfil som jeg kunne bruke videre.
+Dette var malen jeg fikk:
+```
+from pathlib import Path
+import random
+
+BASE_DIR = Path(__file__).parent
+NAMES_FILE = BASE_DIR / "names.txt"
+
+def load_names(filename):
+    with open(filename, "r", encoding="utf-8") as f:
+        return [line.strip() for line in f if line.strip()]
+
+names = load_names(NAMES_FILE)
+name = random.choice(names)
+```
+
+## Venner/medelever
+### Paul 
+### Isak
+
