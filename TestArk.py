@@ -1,172 +1,69 @@
-import random
-import time
+import random as r
+while True:
+    try: 
+        try_amount = int(input(f"""How much do you want to buy it for? (Type 0: to exit)\n"""))
+        if try_amount == 0:
+            print('"Ahh its ok, I have more things you can look at anyways"')
+            break
+        elif try_amount < 0:
+            print('Invalid Input')
+    except (ValueError):
+        print("balright")
 
-#Dictianary
-values = {"2" : 2, "3" : 3, "4" : 4, "5" : 5, "6" : 6, "7" : 7, "8" : 8, "9" : 9, "10" : 10, "J" : 10, "Q" : 10, "K" : 10, "A" : 11}
+prestige = 0
+persuasion = 0
 
-shoe = []
-
-for key in values.keys():
-    for k in range(0, 16):
-        shoe.append(key)
-
-random.shuffle(shoe)
-
-print(shoe)
-# Player's and Dealer's card in str
-pcard1 = shoe.pop(0)
-dcard1 = shoe.pop(0)
-pcard2 = shoe.pop(0)
-dcard2 = shoe.pop(0)
-
-# Player's and Dealer's card in int
-intpcard1 = int(values[pcard1])
-intdcard1 = int(values[dcard1])
-intpcard2 = int(values[pcard2])
-intdcard2 = int(values[dcard2])
-
-paces = 0
-daces = 0
-phand = intpcard1 + intpcard2
-dhand = intdcard1 + intdcard2
-pbust = False
-dbust = False
-end = False
-
-# If you spawn with 2 aces
-if phand > 21:
-    phand -= 10
-    paces += 1
-if dhand > 21:
-    dhand -= 10
-    daces += 1
-
-# Counts aces in your hand
-if pcard1 == "A":
-    paces += 1
-if pcard2 == "A":
-    paces += 1
-if dcard1 == "A":
-    daces += 1
-if dcard2 == "A":
-    daces += 1
-
-phand2 = phand
-
-print(f"""
-----------------------------
-         Welcome to:
-        *Black Jack*
-
-         by Kaspar
-----------------------------
+def hagling(base_value, try_value, persuasion_or_prestige, obsession_status):
+    global persuasion, prestige
+    while True:
+        if persuasion_or_prestige == "persuasion":
+            haggle = round((14.52 * (0.64**((base_value / (try_value + (try_value * (prestige / 50))))*10-10)))*10)
+            if obsession_status == True:
+                    haggle * 0.8
+        elif persuasion_or_prestige == "prestige":
+            haggle = round((14.52 * (0.64**((try_value / (base_value + (base_value * (prestige / 50))))*10-10)))*10)
+            if obsession_status == True:
+                    haggle * 1.3
+        if haggle > 100:
+            haggle == 100
+        print(f"You have a {haggle}% chance of succsesfully hagling npc.name")
+        choice = input("""Do you want to proceed with your offer?
+Type 1: Yes, Type 0: No
 """)
+        if choice == "1":
+            verdict = r.randint(1,100)
+            if haggle >= verdict:
+                print("Frutigo aero yams")
+                return True
+            else:
+                return False
+        elif choice == "0":
+            break
+        else:
+            print("Invalid input")
+            True
 
-print(f"""
----------------------------------------------
-The player got a:\n{pcard1}""")
+""" 
+hagling(10, 9, "persuasion")
+hagling(10, 11, "prestige")
+hagling(10, 5, "persuasion")
+hagling(10, 20, "prestige")
 
-print(f"\nand a:\n{pcard2}\n")
-
-print(f"for a combined hand of:\n{phand}\n")
-
-print(f"""The dealer shows you one of his cards:\n{dcard2}
----------------------------------------------
-""")
-
-try:
-    # Player Hit and Stand loop
-    while phand < 21:
-        action = str(input("""press h to hit or s to stand
-        """).lower())
-        if action == "h":
-            ecard = shoe.pop(0)
-            intecard = int(values[ecard])
-            phand = phand + intecard
-            print(f"You got a\n{ecard}")
-
-            # Player: Bust and Aces if statement
-            if phand > 21:
-                if paces > 0:
-                    paces -= 1
-                    phand -= 10
-                    print("Your Ace turned into a 1")
-                else:
-                    pbust = True
-
-            phand = phand
-            print(f"your total is now\n{phand}")
-        elif action == "s":
-                phand = phand
-                break
+y = round((14.52 * (0.64**(((11 + (11 * (prestige / 50))) / 10)*10-10)))*10)
+print(y)
 
 
 
-    if pbust == False:
-        print(f"The dealer flips over his hidden card:\n{dcard1}\ncombined with his previous card:\n{dcard2}\nthe dealer has a hand of:\n{dhand}\n")
+prestige = 25
+persuasion = 25
 
-    # Dealer draw loop
-        while dhand < 17:
-            ecard = shoe.pop(0)
-            intecard = int(values[ecard])
-            dhand = dhand + intecard
-            print(f"Dealer got a\n{ecard}")
-                # Dealer: Bust and Aces if statement
-            if dhand > 21:
-                if daces > 0:
-                    daces -= 1
-                    dhand -= 10
-                    print("The Dealers Ace turned into a 1")
-                else:
-                    dbust = True
+hagling(10, 9, "persuasion")
+hagling(10, 11, "prestige")
+hagling(10, 5, "persuasion")
+hagling(10, 20, "prestige")
+ """
 
-            print(f"the dealers total is now\n{dhand}")
+verdict = hagling(10, 11, "prestige", True)
 
-except KeyboardInterrupt:
-    end = True
-    print("""
----------------------
-Black Jack has ended.
----------------------
-""")
-
-if end == False:
-    if pbust == True:
-        print(f"""
-----------------------------------------------------------------
-                You got over 21 and busted
-                       *You lose*        
-----------------------------------------------------------------
-""") 
-
-    elif dbust == True:
-        print(f"""
-----------------------------------------------------------------
-            The dealer got over 21 and busted
-                        *You win*
-----------------------------------------------------------------
-""") 
-
-    elif phand > dhand:
-        print(f"""
-----------------------------------------------------------------
-Your hand of {phand} is greater than the dealers hand of {dhand}
-                        *You win*
-----------------------------------------------------------------
-""")
-
-    elif dhand > phand:
-        print(f"""
-----------------------------------------------------------------
-The dealers hand of {dhand} is greater than your hand of {phand}
-                        *You lose*
-----------------------------------------------------------------
-""")
-
-    elif phand == dhand:
-        print(f"""
-----------------------------------------------------------------
-        Both you and the Dealer got a hand of {phand}
-                        *Push*
-----------------------------------------------------------------
-""")
+if verdict == True:
+    print("Yippi")
