@@ -1,52 +1,6 @@
-import random as r
 from pathlib import Path
-gold = 10
-day = 0
-prestige = 1
-persuasion = 1
-
-def main_menu():
-    input()
-
-""" 
-class Item:
-    name1: str
-    catagory1: str
-    base_buy_value1: int
- """
-
-class Item:
-    def __init__(self, name, rarity, catagory, base_buy_value, base_sell_value, info, prestige=0, persuasion=0, abilities=None):
-        self.name = name
-        self.rarity = rarity
-        self.catagory = catagory
-        self.base_buy_value = base_buy_value
-        self.base_sell_value = base_sell_value
-        self.info = info
-        self.prestige = prestige
-        self.persuasion = persuasion
-        self.abilities = abilities
-
-
-# All items
-Commen_Items = [
-    Item("Baseball Cap", "Commen", "Clothing", 3, 2, "Just a stylish Baseball Cap", persuasion=1),
-    Item("Old Wooden Chair", "Commen", "Furniture", 3, 2, "Your mothers Old Wooden Chair")
-]
-Uncommen_Items = [
-    Item("Yamasks Mask", "Uncommen", "Clothing", 10, 7, "Found in a dumpster outside a therapy clinic", prestige=10)
-]
-Rare_Items = [
-    Item("Fedora", "Rare", "Clothing", 15, 12, "Worn by a beaver, a cool beaver", persuasion=25)
-]
-Legendary_Items = [
-    Item("Stylish Cactus", "Legendary", "Furniture", 25, 17, "The best item in the game. Ofc its a Cactus, what else did you expect?", prestige=75),
-    Item("Lebrons Basketball", "Legendary", "Tool", 50, 40, "Lebron Lebron Lebroooooonnn, Lebron", prestige=20)
-]
-
-inventory = [
-
-]
+from YLS_Items import *
+import random as r
 
 def prestige_persuasion_check():
     global inventory, prestige, persuasion
@@ -55,55 +9,6 @@ def prestige_persuasion_check():
 
     for item in inventory:
         persuasion += item.persuasion
-
-
-def item_stats(choosen_item):
-# "\033[A" printer linjen en oppover
-    print(f'''
-¨¨{choosen_item.name}¨¨
-Rarity: {choosen_item.rarity}
-Itemtype: {choosen_item.catagory}
-Worth: {choosen_item.base_sell_value} gold 
-{"Prestige: " + str(choosen_item.prestige) if choosen_item.prestige > 0 else "\033[A"}
-{"Persuasion: " + str(choosen_item.persuasion) if choosen_item.persuasion > 0 else "\033[A"}
-"{choosen_item.info}"
-''')
-
-def view_inventory(inventory):
-    while True:
-        for i, Item in enumerate(inventory):
-            print(f"{i + 1}: {Item.name}")
-        try:
-            element_item = int(input("""Which item do you want to inspect
-press 0: to close: """))
-            if element_item == 0:
-                break
-            else:
-                choosen_item = inventory[element_item - 1]
-                item_stats(choosen_item)
-        except (ValueError, IndexError):
-            print("Invalid item.")
-
-def view_stats():
-    while True:
-        print(f"""¨¨Stats¨¨
-Gold: {gold}
-Day: {day}
-{"Prestige: " + str(prestige) if prestige > 0 else "\033[A"}
-{"Persuasion: " + str(persuasion) if persuasion > 0 else "\033[A"}
-""")
-        stats_action = input("""Press 1: to view your inventory
-Press 0: to exit stats""")
-        if stats_action == "1":
-            view_inventory(inventory)
-        elif stats_action == "0":
-            break
-        else:
-            print("Invalid input")
-            True
-
-
-
 
 BASE_DIR = Path(__file__).parent
 NAMES_FILE = BASE_DIR / "Names.txt"
@@ -114,7 +19,7 @@ def load_names(filename):
 
 names = load_names(NAMES_FILE)
 
-Obsession = ["Furniture", "Clothing", "Tool", "Food", "Tech"]
+Obsession = ["Furniture", "Clothing", "Gear", "Food", "Tech"]
 
 def hagling(base_value, try_value, persuasion_or_prestige, obsession_status):
     global persuasion, prestige
@@ -290,58 +195,3 @@ class Businessman(NPC):
         super().__init__()
         self.deal = 1
 
-NPCs = [
-    Merchant(), Costumer()
-]
-def npc_action(npc):
-    if type(npc) == Merchant:
-        npc.merchant_inventory()
-        npc.buy()
-        print(1)
-    elif type(npc) == Costumer:
-        npc.sell()
-        print(2)
-
-daytime = True
-while daytime == True:
-    print(f"""Its Day {day} of owning the shop.
-3 people are standing outside the shop""")
-    number = 1
-    for i in range(2):
-        shop_action = input(f"""Press 1: Talk to the {number}. person standing infront of the shop
-Press 0: View stats
-""")
-        if shop_action == "1":
-            npc = NPCs[0]
-            npc_action(npc)
-        elif shop_action == "0":
-            view_stats()
-        else:
-            print("Invalid input")
-        number += 1
-    daytime = False
-
-
-print(gold)
-print(persuasion)
-print(prestige)
-
-
-
-
-
-""" 
-def NPC_action(i):
-    if NPC[i] == Merchant(NPC):
-        .sell()
- """
-
-""" NPCs[0].sell() """
-
-""" 
-    base_sell_value / sell_action
- """
-
-"""
-tall = r.randint(100,200) / 100
-"""
