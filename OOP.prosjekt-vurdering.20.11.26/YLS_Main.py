@@ -54,10 +54,11 @@ def npc_action(npc):
         npc.sell()
         print(2)
 
+rent = 2
 rent_paid = True
 while rent_paid == True:
-    print(f"""Its Day {day} of owning the shop.
-3 people are standing outside the shop""")
+    print(f"""Its day {day} of owning the shop and the rent is now {rent} gold.
+there is 3 new people standing outside the shop""")
     while True:
         _person = ["first", "second", "third"]
         index = 0
@@ -77,7 +78,14 @@ Press 0: View stats\n""")
             view_stats()
         else:
             print("Invalid input")
-
+    if rent <= gold:
+        print()
+    else:
+        print()
+        break
+    rent = round(rent*1.5)
+    day += 1
+print("You lose")
 
 print(gold)
 print(persuasion)

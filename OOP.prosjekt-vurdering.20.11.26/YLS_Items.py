@@ -1,9 +1,18 @@
 
-
+def prestige_persuasion_check():
+    global inventory, prestige, persuasion
+    prestige = 0
+    persuasion = 0
+    for item in inventory:
+        prestige += item.prestige
+    for item in inventory:
+        persuasion += item.persuasion
+    prestige * prestige_multiplier
+    persuasion * persuasion_multiplier
 
 
 class Item:
-    def __init__(self, name, rarity, catagory, base_buy_value, base_sell_value, info, prestige=0, persuasion=0, abilities=None, params=None):
+    def __init__(self, name, rarity, catagory, base_buy_value, base_sell_value, info, prestige=0, persuasion=0, abilities=None, params=None, abilities_info=""):
         self.name = name
         self.rarity = rarity
         self.catagory = catagory
@@ -14,7 +23,9 @@ class Item:
         self.persuasion = persuasion
         self.abilities = abilities
         self.params = params
+        self.abilities_info = abilities_info
 
+    # Abilities
     # Activates every Day
     def growing_value(self, value):
         self.base_sell_value += value
@@ -35,9 +46,6 @@ class Item:
             prestige_multiplier += value
 
 
-
-
-
 # All items
 Commen_Items = [
     Item("Baseball Cap", "Commen", "Clothing", 7, 6, "Just a stylish Baseball Cap", persuasion=1),
@@ -50,10 +58,10 @@ Rare_Items = [
     Item("Fedora", "Rare", "Clothing", 15, 12, "Worn by a beaver, a cool beaver", persuasion=15)
 ]
 Legendary_Items = [
-    Item("Stylish Cactus", "Legendary", "Furniture", 33, 27, "The best item in the game. Ofc its a Cactus, what else did you expect?", prestige=50, abillities=Item.multiplier, params=(1.3, "prestige")),
+    Item("Stylish Cactus", "Legendary", "Furniture", 33, 27, "The best item in the game. Ofc its a Cactus, what else did you expect?", prestige=50, abillities=Item.multiplier, params=(1.3, "prestige"), ),
     Item("Lebrons Basketball", "Legendary", "Gear", 100, 90, "Lebron Lebron Lebroooooonnn Lebron", prestige=20),
     Item("Golden Crown", "Legendary", "Clothing", 30, 25, "Only worn by Kings, and you I guess...", prestige=5, persuasion=15),
-    Item("RTX 6090 ti", "Legendary", "Tech", 60, 40, "The best card of the unreleased new generation, dont ask me how I got it!", abilities=Item.growing_value, params=(2,)),
+    Item("RTX 6090 ti", "Legendary", "Tech", 60, 30, "The best card of the unreleased new generation, dont ask me how I got it!", abilities=Item.growing_value, params=(10,), abilities_info="Gain 10 gold every day from crypto mining"),
     Item("Enchanted Golden Apple", "Legendary", "Food", 32, 26, "The highest grade apple you can find. One bite from this thing and your tongue becomes golden", persuasion=30)
 ]
 
@@ -76,8 +84,9 @@ def item_stats(choosen_item):
 ¨¨{choosen_item.name}¨¨
 Rarity: {choosen_item.rarity}
 Itemtype: {choosen_item.catagory}
-Worth: {choosen_item.base_sell_value} gold 
+Resell value: {choosen_item.base_sell_value} gold 
 {"Prestige: " + str(choosen_item.prestige) if choosen_item.prestige > 0 else "\033[A"}
 {"Persuasion: " + str(choosen_item.persuasion) if choosen_item.persuasion > 0 else "\033[A"}
+{"Ability: " + str(choosen_item.abilities_info) if choosen_item.abilities_info != "" else "\033[A"}
 "{choosen_item.info}"
 ''')

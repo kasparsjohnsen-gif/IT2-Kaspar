@@ -4,41 +4,47 @@
 
 ## **Coreloop:**
 Du driver en liten sjappe hvor du seller og kjøper ulike gjenstander for å kunne betale renten din.
-Renten øker med hver dag som går helt til du ikke greier å betale den.
-Hver dag vil det komme 3 personer på rad og gi deg ulike tilbud.
-de ulike personene kan enten selle deg ting, kjøpe ting fra deg eller gi deg et tilbud.
-Når du seller og kjøper kan du velge hvor mye du har lyst til å selge eller kjøpe med i håp om at personen velger å akseptere prisen du har valgt
-Etter at du har "interacted" med hver av de tre personene vil det bli natt.
-Om natten vil det komme en spøkelse og "curse" sjappen din med enten en slags curse
+
+Du starter med 10 gold og renten øker med hver dag som går helt til du ikke greier å betale den mer. Spillet slutter når du ikke har nok penger til å tilbake renten,
+
+Hver dag vil det komme 3 personer til sjappen din en etter en og gi deg ulike tilbud.
+Personen kan enten være en Merchant, Costumers, Buisnessman.
+Når du seller og kjøper ulike items kan du velge hvor mye du har lyst til å selge eller kjøpe den for, i håp om at personen velger å akseptere prisen du har valgt.
+Man kan øke denne sjansen ved å ha ulike items som øker prestige og persusajon i inventoryet sitt.
+Etter at du har "interacted" med hver av de tre personene vil det bli kveld og du må betale renten før det blir neste dag.
 
 ### **NPCs**
 NPCene blir puttet i tre grupper:
-**Merchants**: de har primert lyst til å selge deg noe.
-**Costumers**: de vil primert kjøpe ting fra deg.
-**Deal makers**: de vil bare gi deg en spesifikk deal som kan ha noe å si med pengene dine eller itemsene dine.
+**Merchants**: de har lyst til å selge deg noe.
+**Costumers**: de vil kjøpe ting fra deg.
+**Buisnessman**: de vil bare gi deg en spesifikk deal som kan ha noe å si med pengene dine eller itemsene dine.
 
-Sjansen for at du greier å overselle eller underpaye kommer an på persuasion staten din, prestige staten din og hvilke trait NPCen har
-
-Traits er additional stats en NPC kan ha som sier noe om hvor lett og hvor mye du kan hagle med dem.
+prestige øker sjansen din for å overselle
+persuasion øker sjansen din for å underbuye
 
 ### **Items:**
 
 **Itemstats**
-Items har en base-sellvalue og en base-buyvalue.
-Items kan også ha enten en pristige stat eller en persuasion stat.
-
+Alle items har en base-sellvalue og en base-buyvalue.
+Items kan også ha en prestige stat eller en persuasion stat.
+I tillegg er det noen Items som har abilities
 
 **Raritys:**
 commen, uncommen, rare, legendary
+commen 50% sjanse
+uncommen 30% sjanse
+rare 15 % sjanse
+legendary 5% sjanse
 
 **Item classes:**
 *Furniture*
 *Clothing*
-*Tools*
+*Gear*
 *Tech*
 *Food*
 
-**Liste av ulike items:**
+**Liste av ulike items(utdatert):**
+
 **Commen items:**
 *Old-Chair* 'Furniture' - Buy: 3g - sell: 2g
 
@@ -84,6 +90,8 @@ en kort oppsummering av hva du har gjort, når (logg)
 27.10.26
 planlegging av spillet
 
+
+
 # **Kilder**
 ## KI
 ### Claude
@@ -106,6 +114,5 @@ name = random.choice(names)
 ```
 
 ## Venner/medelever
-### Paul 
-### Isak
+
 
