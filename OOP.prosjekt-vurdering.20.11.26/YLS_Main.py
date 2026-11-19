@@ -5,14 +5,10 @@ gold = 10
 day = 0
 prestige = 1
 persuasion = 1
+inventory = []
 
 def main_menu():
     input()
-
-
-inventory = [
-
-]
 
 def view_inventory(inventory):
     while True:
@@ -45,10 +41,9 @@ Press 0: to exit stats""")
             break
         else:
             print("Invalid input")
-            True
 
 NPCs = [
-    Merchant(), Costumer()
+    Merchant(), Costumer(), Merchant()
 ]
 def npc_action(npc):
     if type(npc) == Merchant:
@@ -59,24 +54,29 @@ def npc_action(npc):
         npc.sell()
         print(2)
 
-daytime = True
-while daytime == True:
+rent_paid = True
+while rent_paid == True:
     print(f"""Its Day {day} of owning the shop.
 3 people are standing outside the shop""")
-    number = 1
-    for i in range(2):
-        shop_action = input(f"""Press 1: Talk to the {number}. person standing infront of the shop
-Press 0: View stats
-""")
+    while True:
+        _person = ["first", "second", "third"]
+        index = 0
+        shop_action = input(f"""Press 1: Talk to the {_person[0 + index]}. person standing infront of the shop
+Press 0: View stats\n""")
+        index += 1
+        index1 = 0
         if shop_action == "1":
-            npc = NPCs[0]
+            npc = NPCs[0 + index1]
             npc_action(npc)
+            if index1 < 2:
+                index1 += 1
+            else:
+                print("Theres no more costumers")
+                break
         elif shop_action == "0":
             view_stats()
         else:
             print("Invalid input")
-        number += 1
-    daytime = False
 
 
 print(gold)

@@ -2,14 +2,6 @@ from pathlib import Path
 from YLS_Items import *
 import random as r
 
-def prestige_persuasion_check():
-    global inventory, prestige, persuasion
-    for item in inventory:
-        prestige += item.prestige
-
-    for item in inventory:
-        persuasion += item.persuasion
-
 BASE_DIR = Path(__file__).parent
 NAMES_FILE = BASE_DIR / "Names.txt"
 
