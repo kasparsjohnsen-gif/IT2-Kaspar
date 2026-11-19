@@ -1,15 +1,27 @@
+from YLS_Base_stats import *
 
 def prestige_persuasion_check():
     global inventory, prestige, persuasion
     prestige = 0
     persuasion = 0
+    prestige_multiplier = 0
+    persuasion_multiplier= 0
     for item in inventory:
         prestige += item.prestige
     for item in inventory:
         persuasion += item.persuasion
+    for item in inventory:
+        if item.abilities == Item.multiplier:
+            item.abilities(*item.params)
     prestige * prestige_multiplier
     persuasion * persuasion_multiplier
 
+def daily_abilities_check():
+    global inventory
+    for item in inventory:
+        if item.abilites != None:
+            if item.abilities != Item.multiplier:
+                item.abilities(*item.params)
 
 class Item:
     def __init__(self, name, rarity, catagory, base_buy_value, base_sell_value, info, prestige=0, persuasion=0, abilities=None, params=None, abilities_info=""):
@@ -58,8 +70,8 @@ Rare_Items = [
     Item("Fedora", "Rare", "Clothing", 15, 12, "Worn by a beaver, a cool beaver", persuasion=15)
 ]
 Legendary_Items = [
-    Item("Stylish Cactus", "Legendary", "Furniture", 33, 27, "The best item in the game. Ofc its a Cactus, what else did you expect?", prestige=50, abillities=Item.multiplier, params=(1.3, "prestige"), ),
-    Item("Lebrons Basketball", "Legendary", "Gear", 100, 90, "Lebron Lebron Lebroooooonnn Lebron", prestige=20),
+    Item("Stylish Cactus", "Legendary", "Furniture", 33, 27, "The best item in the game. Ofc its a Cactus, what else did you expect?", prestige=50, abilities=Item.multiplier, params=(1.3, "prestige"), ),
+    Item("Lebrons Basketball", "Legendary", "Gear", 100, 100, "Lebron Lebron Lebroooooonnn Lebron", prestige=20),
     Item("Golden Crown", "Legendary", "Clothing", 30, 25, "Only worn by Kings, and you I guess...", prestige=5, persuasion=15),
     Item("RTX 6090 ti", "Legendary", "Tech", 60, 30, "The best card of the unreleased new generation, dont ask me how I got it!", abilities=Item.growing_value, params=(10,), abilities_info="Gain 10 gold every day from crypto mining"),
     Item("Enchanted Golden Apple", "Legendary", "Food", 32, 26, "The highest grade apple you can find. One bite from this thing and your tongue becomes golden", persuasion=30)

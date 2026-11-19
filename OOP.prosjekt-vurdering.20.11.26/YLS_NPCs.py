@@ -1,5 +1,6 @@
 from pathlib import Path
 from YLS_Items import *
+from YLS_Base_stats import *
 import random as r
 
 BASE_DIR = Path(__file__).parent
@@ -84,8 +85,7 @@ class Merchant(NPC):
                 element_item = int(input("""Which item do you want to look at? (type 0 to exit the NPC): """))
                 if element_item == 0:
                     print('''"You dont want any more of my items?
-I guess ill just have to find someone else to buy them, bye bye!"
-*The NPC left*''')
+I guess ill just have to find someone else to buy them!"''')
                     break
                 else:
                     choosen_item = self.items_for_sale[element_item - 1]
@@ -104,6 +104,8 @@ I guess ill just have to find someone else to buy them, bye bye!"
                                 break
                             elif try_amount < 0:
                                 print('Invalid Input')
+                            elif try_amount > choosen_item.base_buy_value:
+                                print("Are you stupid?")
                             else:
                                 haggle = hagling(choosen_item.base_buy_value, try_amount, "persuasion",obsessed)
                                 if haggle == True:
@@ -182,8 +184,103 @@ Bye"''')
         print(f'''"Ill be going now Bye"
 {self.name} left''')
 
+
+
+
 class Businessman(NPC):
     def __init__(self):
         super().__init__()
-        self.deal = 1
+        deals = [self.deal_1, self.deal_2, self.deal_3]
+        self.deal = r.choice(deals)
 
+    def deal_1(self):
+        global gold
+        print(f'''"Hello my name is {self.name}, I have a Deal for you"
+    "if you can lend me 10 gold Ill go and invest it right now"
+    "and defenetly not gamble it *wink* *wink* and then you can get half of the profits"
+    "Is that a deal?"''')
+        print(f"You have {gold}")
+        if gold < 10:
+            print('"You dont have enough money sadly"')
+        else:
+            choice = input("Type 1: Yes, Type 0: No")
+            if choice == "1":
+                gold -= 10
+                print('You lose 10 gold\n"Nice your not gonna be disappointed"')
+                outcome = r.randint(1,50)
+                if 1 <= outcome < 11:
+                    print('''"Yoo, Im back"\n"So bad news I kinda lost it all"\n"My Bad"''')
+                elif 11 <= outcome < 21:
+                    print('"Yoo, Im back"\n"So good news I didnt lose everything"\n"Bad news I only have half of what you gave me back"\n"so here"\n*He gives you back 5 gold*')
+                    gold += 5
+                elif 21 <= outcome < 26:
+                    print('"Yoo, Im back"\n"Bro I managed to dobbel the money soo i guess you can have the money back "\n*He gives you back 10 gold*')
+                    gold += 10                
+                elif 26 <= outcome < 31:
+                    print('"Yoo, Im back"\n"Bro I managed to win"\n"you can get back your money plus an extra 5 gold"\n*He gives you back 15 gold*')
+                    gold += 15
+                elif 31 <= outcome < 41:
+                    print('"Yoo, Im back"\n"Bro I managed to win quite a bit"\n"you can get back your money plus an extra 10 gold"\n*He gives you back 20 gold*')
+                    gold += 20
+                elif 41 <= outcome < 46:
+                    print('"Yoo, Im back"\n"Bro I managed to win big"\n"you can get back your money plus an extra 15 gold"\n*He gives you back 25 gold*')
+                    gold += 25
+                elif 46 <= outcome < 49:
+                    print('"Yoo, Im back"\n"Bro I managed to win big"\n"you can get back your money plus an extra 20 gold"\n*He gives you back 30 gold*')
+                    gold += 30
+                elif outcome == 49:
+                    print('"Yoo, Im back"\n"Bro You dont know how locked in I was back there!"\n"I won 200 gold!!"\n"heres your share of 100 gold"\n*He gives you back 100 gold*')
+                    gold += 100
+                elif outcome == 50:
+                    print('"Yoo, Im back"\n"Bro I won everything im loaded!!!"\n"I won 500 gold!!!!"\n"heres your share of 250 gold"\n*He gives you back 250 gold*')
+                    gold += 250
+                print(f"You now have {gold} gold")
+            elif choice == "0":
+                print('"You dont want to take the deal?"\n"your loss I guess"\n"Bye!"')
+            else:
+                print("Invalid Input")
+        print(f'''"Ill be going now Bye"
+{self.name} left''')
+
+    def deal_2(self):
+        global inventory, gold
+        print(f'''"Whats up my name is {self.name}, and I have a Deal for you"
+    "If you can sell me all your items Ill pay you 1.5 times their worth"''')
+        choice = input("Sell all your items\nType 1: Yes, Type 0")
+        if choice == "1":
+            print('"Great hand me over your Items"')
+            total_gold = 0
+            for item in inventory:
+                total_gold += round(item.base_sell_value * 1.5)
+            inventory.clear()
+            gold += total_gold
+            print(f'"Thank you for the Deal heres {total_gold} gold for all your items\nYou gained {total_gold} and now have {gold} gold"')
+        elif choice == "0":
+            print('"You dont want to take the deal?"\n"your loss I guess"\n"Bye!"')
+        else:
+            print("Invalid Input")
+        print(f'''"Ill be going now Bye"
+{self.name} left''')
+
+
+    def deal_3(self):
+        global inventory, gold
+        print(f'''"Hi my name is {self.name}, and I have a Deal for you"
+    if you pay me 75 gold Ill give you a random Legendary Item"''') 
+        choice = input('"So what do you say, will you take the deal?"\nType 1: Yes, Type 0: No')
+        if choice == "1":
+            if gold < 75:
+                print("You dont have enough money sadly")
+            else:
+                gold -= 75
+                random_index = r.randint(0, len(Legendary_Items)-1)
+                inventory.append(Legendary_Items[random_index])
+                print(f'"Great, heres your Legendary item: {Legendary_Items[random_index].name}"')
+        elif choice == "0":
+            print('"You dont want to take the deal?"\n"your loss I guess"\n"Bye!"')
+        else:
+            print("Invalid Input")
+        print(f'''"Ill be going now Bye"
+{self.name} left''')
+
+    

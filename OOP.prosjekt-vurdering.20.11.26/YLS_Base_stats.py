@@ -1,0 +1,9 @@
+gold = 10
+day = 0
+prestige = 0
+persuasion = 0
+prestige_multiplier = 0
+persuasion_multiplier= 0
+inventory = []
+person_index = 0
+npc_index = 0

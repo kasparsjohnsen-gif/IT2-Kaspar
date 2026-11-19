@@ -113,6 +113,10 @@ names = load_names(NAMES_FILE)
 name = random.choice(names)
 ```
 
+## Patorjk
+[Link](https://patorjk.com/software/taag/#p=display&f=Slant&t=Your%0ALocal%0AShop&x=none&v=4&h=4&w=80&we=false)
+
 ## Venner/medelever
+
 
 

@@ -1,14 +1,7 @@
 import random as r
+from YLS_Base_stats import *
 from YLS_Items import *
 from YLS_NPCs import *
-gold = 10
-day = 0
-prestige = 1
-persuasion = 1
-inventory = []
-
-def main_menu():
-    input()
 
 def view_inventory(inventory):
     while True:
@@ -30,6 +23,7 @@ def view_stats():
         print(f"""¨¨Stats¨¨
 Gold: {gold}
 Day: {day}
+Rent: {rent}
 {"Prestige: " + str(prestige) if prestige > 0 else "\033[A"}
 {"Persuasion: " + str(persuasion) if persuasion > 0 else "\033[A"}
 """)
@@ -43,51 +37,71 @@ Press 0: to exit stats""")
             print("Invalid input")
 
 NPCs = [
-    Merchant(), Costumer(), Merchant()
+    Merchant(), Costumer(), Businessman()
 ]
+# r.choice([Businessman(),Merchant(), Costumer()]
+
 def npc_action(npc):
     if type(npc) == Merchant:
         npc.merchant_inventory()
         npc.buy()
-        print(1)
     elif type(npc) == Costumer:
         npc.sell()
-        print(2)
+    elif type(npc) == Businessman:
+        npc.deal()
+
+print(r"""
+__  __                       
+\ \/ /___  __  _______       
+ \  / __ \/ / / / ___/       
+ / / /_/ / /_/ / /           
+/_/\____/\__,_/_/          __
+   / /   ____  _________ _/ /
+  / /   / __ \/ ___/ __ `/ / 
+ / /___/ /_/ / /__/ /_/ / /  
+/_____/\____/\___/\__,_/_/   
+  / ___// /_  ____  ____     
+  \__ \/ __ \/ __ \/ __ \    
+ ___/ / / / / /_/ / /_/ /    
+/____/_/ /_/\____/ .___/     
+                /_/
+""")
 
 rent = 2
 rent_paid = True
-while rent_paid == True:
-    print(f"""Its day {day} of owning the shop and the rent is now {rent} gold.
-there is 3 new people standing outside the shop""")
-    while True:
-        _person = ["first", "second", "third"]
-        index = 0
-        shop_action = input(f"""Press 1: Talk to the {_person[0 + index]}. person standing infront of the shop
-Press 0: View stats\n""")
-        index += 1
-        index1 = 0
-        if shop_action == "1":
-            npc = NPCs[0 + index1]
-            npc_action(npc)
-            if index1 < 2:
-                index1 += 1
+try:
+    while rent_paid == True:
+        print(f"""Its day {day} of owning the shop and the rent is now {rent} gold.
+    there is 3 new people standing outside the shop""")
+        while True:
+            person = ["first", "second", "third"]
+            if person_index < 3:
+                shop_action = input(f"""Press 1: Talk to the {person[0 + person_index]} person standing infront of the shop
+    Press 0: View stats\n""")
+                if shop_action == "1":
+                    npc = NPCs[0 + npc_index]
+                    npc_action(npc)
+                elif shop_action == "0":
+                    view_stats()
+                else:
+                    print("Invalid input")   
+                person_index += 1 
             else:
                 print("Theres no more costumers")
                 break
-        elif shop_action == "0":
-            view_stats()
+
+        print("Night has come")
+        if rent <= gold:
+            gold =- rent
+            print(f"You paid rent for {rent} gold ")
         else:
-            print("Invalid input")
-    if rent <= gold:
-        print()
-    else:
-        print()
-        break
-    rent = round(rent*1.5)
-    day += 1
-print("You lose")
-
-print(gold)
-print(persuasion)
-print(prestige)
-
+            print()
+            rent_paid = False
+        rent = round(rent*1.5)
+        day += 1
+        person_index = 0
+        npc_index = 0
+        daily_abilities_check()
+    print("You lose")
+except KeyboardInterrupt:
+    print("Exiting the Game")
