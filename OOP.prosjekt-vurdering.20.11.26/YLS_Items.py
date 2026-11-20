@@ -43,7 +43,8 @@ class Item:
         self.base_sell_value += value
 
     def shrinking_value(self, value):
-        self.base_sell_value -= value
+        if self.base_sell_value > 0:
+            self.base_sell_value -= value
 
     def passive_income(self, value):
         global gold
@@ -60,17 +61,84 @@ class Item:
 
 # All items
 Commen_Items = [
+    # Food
+    Item("Half-Eaten Sandwich", "Commen", "Food", 5, 3, "Someone took a bite and decided they weren't hungry anymore"),
+    Item("Expired Energy Drink", "Commen", "Food", 6, 3, "Probably expired three months ago, but it still has some fizz"),
+    Item("Instant Noodles", "Commen", "Food", 4, 3, "A college student's favourite meal"),
+    Item("Slightly Rotten Banana", "Commen", "Food", 3, 2, "It's mostly brown, but hey, it's still edible"),
+
+    # Tech
+    Item("Old Nokia Phone", "Commen", "Tech", 8, 6, "Survived a nuclear apocalypse, but can't run YouTube"),
+    Item("Broken Headphones", "Commen", "Tech", 5, 3, "Only one side works, but that's better than nothing"),
+    Item("USB Stick", "Commen", "Tech", 7, 5, "Contains 2GB of questionable files"),
+    Item("Wired Mouse", "Commen", "Tech", 6, 4, "A perfectly normal computer mouse"),
+
+    # Gear
+    Item("Rusty Compass", "Commen", "Gear", 7, 5, "Points north... most of the time"),
+    Item("Old Backpack", "Commen", "Gear", 9, 7, "Smells weird, but has plenty of storage"),
+    Item("Wooden Walking Stick", "Commen", "Gear", 5, 4, "Perfect for old people and adventurers"),
+    Item("Cheap Sunglasses", "Commen", "Gear", 6, 4, "Makes you look 10% cooler"),
+
+    # Furniture
+    Item("Old Wooden Chair", "Commen", "Furniture", 5, 4, "Your mothers Old Wooden Chair"),
+    Item("Plastic Garden Chair", "Commen", "Furniture", 6, 4, "A classic chair found in every garden"),
+    Item("Small Wooden Table", "Commen", "Furniture", 9, 7, "Nothing special, but it gets the job done"),
+    Item("Old Bookshelf", "Commen", "Furniture", 8, 5, "Filled with books nobody has read"),
+
+    # Clothing
     Item("Baseball Cap", "Commen", "Clothing", 7, 6, "Just a stylish Baseball Cap", persuasion=1),
-    Item("Old Wooden Chair", "Commen", "Furniture", 5, 4, "Your mothers Old Wooden Chair")
+    Item("Dirty White T-Shirt", "Commen", "Clothing", 5, 3, "Was white once, probably"),
+    Item("Old Jeans", "Commen", "Clothing", 8, 6, "A little worn out, but still fashionable"),
+    Item("Woolly Socks", "Commen", "Clothing", 4, 3, "Keeps your feet warm, what more could you ask for?")
 ]
+
 Uncommen_Items = [
-    Item("Yamasks Mask", "Uncommen", "Clothing", 10, 7, "Found in a dumpster outside a therapy clinic", prestige=10)
+
+    # Food
+    Item("Homemade Apple Pie", "Uncommen", "Food", 14, 11, "Freshly baked by someone's grandmother", persuasion=4),
+    Item("Spagetti bolognese", "Uncommen", "Food", 10, 10, "Made by your local chef, tastes wonderfull", persuasion=3, abilities=Item.shrinking_value, params=(1,), abilities_info="Looses 1 gold resell value every day"),
+
+    # Tech
+    Item("Mechanical Keyboard", "Uncommen", "Tech", 17, 14, "Sounds like a machine when typing", persuasion=5),
+    Item("Vintage Game Console", "Uncommen", "Tech", 16, 13, "An old gaming console that's still in pretty good condition", prestige=8),
+
+    # Gear
+    Item("Leather Backpack", "Uncommen", "Gear", 15, 12, "A well-made backpack with plenty of storage", prestige=5),
+    Item("Silver Pocket Watch", "Uncommen", "Gear", 18, 15, "An old pocket watch that still works perfectly", prestige=8),
+
+    # Furniture
+    Item("Antique Wooden Cabinet", "Uncommen", "Furniture", 16, 13, "An old cabinet in surprisingly good condition", prestige=8),
+    Item("Comfortable Recliner", "Uncommen", "Furniture", 14, 11, "A very comfortable chair that practically swallows you"),
+
+    # Clothing
+    Item("Designer Hoodie", "Uncommen", "Clothing", 18, 15, "A popular hoodie from a fairly expensive brand", persuasion=8),
+    Item("Yamasks Mask", "Uncommen", "Clothing", 10, 8, "Found in a dumpster outside a therapy clinic", prestige=10),
 ]
+
 Rare_Items = [
-    Item("Fedora", "Rare", "Clothing", 15, 12, "Worn by a beaver, a cool beaver", persuasion=15)
+    # Food
+    Item("Aged Wine Cheese", "Rare", "Food", 25, 21, "Aged for several years and sold at a surprisingly high price", persuasion=12),
+    Item("Imported Truffle", "Rare", "Food", 28, 23, "A rare ingredient used by expensive restaurants"),
+
+    # Tech
+    Item("Oled Monitor", "Rare", "Tech", 20, 15, "Once you go Oled you can never go back", prestige=25),
+    Item("Prototype Smartphone", "Rare", "Tech", 27, 22, "An unreleased phone that somehow ended up on the market", abilities=Item.growing_value, params=(2,), abilities_info="Gain 2 gold resell value every day"),
+
+    # Gear
+    Item("Professional Camera", "Rare", "Gear", 25, 21, "A professional camera used by experienced photographers", prestige=15),
+    Item("Gold Pocket Watch", "Rare", "Gear", 29, 24, "A beautifully crafted pocket watch made from real gold", prestige=18),
+
+    # Furniture
+    Item("Handcrafted Dining Table", "Rare", "Furniture", 28, 23, "A large dining table made from expensive wood", prestige=15),
+    Item("Antique Grandfather Clock", "Rare", "Furniture", 30, 25, "An old grandfather clock that still keeps perfect time", abilities=Item.passive_income, params=(2,), abilities_info="Generates 2 gold every day"),
+
+    # Clothing
+    Item("Fedora", "Rare", "Clothing", 15, 12, "Worn by a beaver, a cool beaver", persuasion=15),
+    Item("Expensive Business Suit", "Rare", "Clothing", 27, 22, "A professionally tailored suit worn by successful businessmen", prestige=15, persuasion=8)
 ]
+
 Legendary_Items = [
-    Item("Stylish Cactus", "Legendary", "Furniture", 33, 27, "The best item in the game. Ofc its a Cactus, what else did you expect?", prestige=50, abilities=Item.multiplier, params=(1.3, "prestige"), ),
+    Item("Stylish Cactus", "Legendary", "Furniture", 33, 27, "The best item in the game. Ofc its a Cactus, what else did you expect?", prestige=50, abilities=Item.multiplier, params=(1.3, "prestige"), abilities_info="Gain 30% more prestige as long as you have this item"),
     Item("Lebrons Basketball", "Legendary", "Gear", 100, 100, "Lebron Lebron Lebroooooonnn Lebron", prestige=20),
     Item("Golden Crown", "Legendary", "Clothing", 30, 25, "Only worn by Kings, and you I guess...", prestige=5, persuasion=15),
     Item("RTX 6090 ti", "Legendary", "Tech", 60, 30, "The best card of the unreleased new generation, dont ask me how I got it!", abilities=Item.growing_value, params=(10,), abilities_info="Gain 10 gold every day from crypto mining"),
