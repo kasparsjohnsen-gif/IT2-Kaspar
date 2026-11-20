@@ -13,13 +13,13 @@ def prestige_persuasion_check():
     for item in inventory:
         if item.abilities == Item.multiplier:
             item.abilities(*item.params)
-    prestige * prestige_multiplier
-    persuasion * persuasion_multiplier
+    prestige *= prestige_multiplier
+    persuasion *= persuasion_multiplier
 
 def daily_abilities_check():
     global inventory
     for item in inventory:
-        if item.abilites != None:
+        if item.abilities != None:
             if item.abilities != Item.multiplier:
                 item.abilities(*item.params)
 
@@ -60,59 +60,59 @@ class Item:
 
 
 # All items
-Commen_Items = [
+Common_Items = [
     # Food
-    Item("Half-Eaten Sandwich", "Commen", "Food", 5, 3, "Someone took a bite and decided they weren't hungry anymore"),
-    Item("Expired Energy Drink", "Commen", "Food", 6, 3, "Probably expired three months ago, but it still has some fizz"),
-    Item("Instant Noodles", "Commen", "Food", 4, 3, "A college student's favourite meal"),
-    Item("Slightly Rotten Banana", "Commen", "Food", 3, 2, "It's mostly brown, but hey, it's still edible"),
+    Item("Half-Eaten Sandwich", "Common", "Food", 5, 3, "Someone took a bite and decided they weren't hungry anymore"),
+    Item("Expired Energy Drink", "Common", "Food", 6, 3, "Probably expired three months ago, but it still has some fizz"),
+    Item("Instant Noodles", "Common", "Food", 4, 3, "A college student's favourite meal"),
+    Item("Slightly Rotten Banana", "Common", "Food", 3, 2, "It's mostly brown, but hey, it's still edible"),
 
     # Tech
-    Item("Old Nokia Phone", "Commen", "Tech", 8, 6, "Survived a nuclear apocalypse, but can't run YouTube"),
-    Item("Broken Headphones", "Commen", "Tech", 5, 3, "Only one side works, but that's better than nothing"),
-    Item("USB Stick", "Commen", "Tech", 7, 5, "Contains 2GB of questionable files"),
-    Item("Wired Mouse", "Commen", "Tech", 6, 4, "A perfectly normal computer mouse"),
+    Item("Old Nokia Phone", "Common", "Tech", 8, 6, "Survived a nuclear apocalypse, but can't run YouTube"),
+    Item("Broken Headphones", "Common", "Tech", 5, 3, "Only one side works, but that's better than nothing"),
+    Item("USB Stick", "Common", "Tech", 7, 5, "Contains 2GB of questionable files"),
+    Item("Wired Mouse", "Common", "Tech", 6, 4, "A perfectly normal computer mouse"),
 
     # Gear
-    Item("Rusty Compass", "Commen", "Gear", 7, 5, "Points north... most of the time"),
-    Item("Old Backpack", "Commen", "Gear", 9, 7, "Smells weird, but has plenty of storage"),
-    Item("Wooden Walking Stick", "Commen", "Gear", 5, 4, "Perfect for old people and adventurers"),
-    Item("Cheap Sunglasses", "Commen", "Gear", 6, 4, "Makes you look 10% cooler"),
+    Item("Rusty Compass", "Common", "Gear", 7, 5, "Points north... most of the time"),
+    Item("Old Backpack", "Common", "Gear", 9, 7, "Smells weird, but has plenty of storage"),
+    Item("Wooden Walking Stick", "Common", "Gear", 5, 4, "Perfect for old people and adventurers"),
+    Item("Cheap Sunglasses", "Common", "Gear", 6, 4, "Makes you look 10% cooler"),
 
     # Furniture
-    Item("Old Wooden Chair", "Commen", "Furniture", 5, 4, "Your mothers Old Wooden Chair"),
-    Item("Plastic Garden Chair", "Commen", "Furniture", 6, 4, "A classic chair found in every garden"),
-    Item("Small Wooden Table", "Commen", "Furniture", 9, 7, "Nothing special, but it gets the job done"),
-    Item("Old Bookshelf", "Commen", "Furniture", 8, 5, "Filled with books nobody has read"),
+    Item("Old Wooden Chair", "Common", "Furniture", 5, 4, "Your mothers Old Wooden Chair"),
+    Item("Plastic Garden Chair", "Common", "Furniture", 6, 4, "A classic chair found in every garden"),
+    Item("Small Wooden Table", "Common", "Furniture", 9, 7, "Nothing special, but it gets the job done"),
+    Item("Old Bookshelf", "Common", "Furniture", 8, 5, "Filled with books nobody has read"),
 
     # Clothing
-    Item("Baseball Cap", "Commen", "Clothing", 7, 6, "Just a stylish Baseball Cap", persuasion=1),
-    Item("Dirty White T-Shirt", "Commen", "Clothing", 5, 3, "Was white once, probably"),
-    Item("Old Jeans", "Commen", "Clothing", 8, 6, "A little worn out, but still fashionable"),
-    Item("Woolly Socks", "Commen", "Clothing", 4, 3, "Keeps your feet warm, what more could you ask for?")
+    Item("Baseball Cap", "Common", "Clothing", 7, 6, "Just a stylish Baseball Cap", persuasion=1),
+    Item("Dirty White T-Shirt", "Common", "Clothing", 5, 3, "Was white once, probably"),
+    Item("Old Jeans", "Common", "Clothing", 8, 6, "A little worn out, but still fashionable"),
+    Item("Woolly Socks", "Common", "Clothing", 4, 3, "Keeps your feet warm, what more could you ask for?")
 ]
 
-Uncommen_Items = [
+UnCommon_Items = [
 
     # Food
-    Item("Homemade Apple Pie", "Uncommen", "Food", 14, 11, "Freshly baked by someone's grandmother", persuasion=4),
-    Item("Spagetti bolognese", "Uncommen", "Food", 10, 10, "Made by your local chef, tastes wonderfull", persuasion=3, abilities=Item.shrinking_value, params=(1,), abilities_info="Looses 1 gold resell value every day"),
+    Item("Homemade Apple Pie", "UnCommon", "Food", 14, 11, "Freshly baked by someone's grandmother", persuasion=4),
+    Item("Spagetti bolognese", "UnCommon", "Food", 10, 10, "Made by your local chef, tastes wonderfull", persuasion=3, abilities=Item.shrinking_value, params=(1,), abilities_info="Looses 1 gold resell value every day"),
 
     # Tech
-    Item("Mechanical Keyboard", "Uncommen", "Tech", 17, 14, "Sounds like a machine when typing", persuasion=5),
-    Item("Vintage Game Console", "Uncommen", "Tech", 16, 13, "An old gaming console that's still in pretty good condition", prestige=8),
+    Item("Mechanical Keyboard", "UnCommon", "Tech", 17, 14, "Sounds like a machine when typing", persuasion=5),
+    Item("Vintage Game Console", "UnCommon", "Tech", 16, 13, "An old gaming console that's still in pretty good condition", prestige=8),
 
     # Gear
-    Item("Leather Backpack", "Uncommen", "Gear", 15, 12, "A well-made backpack with plenty of storage", prestige=5),
-    Item("Silver Pocket Watch", "Uncommen", "Gear", 18, 15, "An old pocket watch that still works perfectly", prestige=8),
+    Item("Leather Backpack", "UnCommon", "Gear", 15, 12, "A well-made backpack with plenty of storage", prestige=5),
+    Item("Silver Pocket Watch", "UnCommon", "Gear", 18, 15, "An old pocket watch that still works perfectly", prestige=8),
 
     # Furniture
-    Item("Antique Wooden Cabinet", "Uncommen", "Furniture", 16, 13, "An old cabinet in surprisingly good condition", prestige=8),
-    Item("Comfortable Recliner", "Uncommen", "Furniture", 14, 11, "A very comfortable chair that practically swallows you"),
+    Item("Antique Wooden Cabinet", "UnCommon", "Furniture", 16, 13, "An old cabinet in surprisingly good condition", prestige=8),
+    Item("Comfortable Recliner", "UnCommon", "Furniture", 14, 11, "A very comfortable chair that practically swallows you"),
 
     # Clothing
-    Item("Designer Hoodie", "Uncommen", "Clothing", 18, 15, "A popular hoodie from a fairly expensive brand", persuasion=8),
-    Item("Yamasks Mask", "Uncommen", "Clothing", 10, 8, "Found in a dumpster outside a therapy clinic", prestige=10),
+    Item("Designer Hoodie", "UnCommon", "Clothing", 18, 15, "A popular hoodie from a fairly expensive brand", persuasion=8),
+    Item("Yamasks Mask", "UnCommon", "Clothing", 10, 8, "Found in a dumpster outside a therapy clinic", prestige=10),
 ]
 
 Rare_Items = [

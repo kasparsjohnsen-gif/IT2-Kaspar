@@ -61,11 +61,11 @@ class Merchant(NPC):
         for i in range(self.stock):
             rarity = r.randint(1,20)
             if 10 > rarity >= 1:
-                random_index = r.randint(0, len(Commen_Items)-1)
-                Merchant_inventory.append(Commen_Items[random_index])
+                random_index = r.randint(0, len(Common_Items)-1)
+                Merchant_inventory.append(Common_Items[random_index])
             elif 17 > rarity >= 10:
-                random_index = r.randint(0, len(Uncommen_Items)-1)
-                Merchant_inventory.append(Uncommen_Items[random_index])
+                random_index = r.randint(0, len(UnCommon_Items)-1)
+                Merchant_inventory.append(UnCommon_Items[random_index])
             elif 20 > rarity >= 17:
                 random_index = r.randint(0, len(Rare_Items)-1)
                 Merchant_inventory.append(Rare_Items[random_index])
@@ -87,9 +87,11 @@ class Merchant(NPC):
                     print('''"You dont want any more of my items?
 I guess ill just have to find someone else to buy them!"''')
                     break
+                elif element_item < 0:
+                    print("Invalid Input")
                 else:
                     choosen_item = self.items_for_sale[element_item - 1]
-                    if choosen_item.catagory == self.obsession:
+                    if choosen_item.category == self.obsession:
                         obsessed = True
                     else:
                         obsessed = False
@@ -150,9 +152,11 @@ class Costumer(NPC):
 well i guess ill just get going then
 Bye"''')
                     break
+                elif element_item < 0:
+                    print("Invalid Input")
                 else:
                     choosen_item = inventory[element_item - 1]
-                    if choosen_item.catagory == self.obsession:
+                    if choosen_item.category == self.obsession:
                         obsessed = True
                     else:
                         obsessed = False

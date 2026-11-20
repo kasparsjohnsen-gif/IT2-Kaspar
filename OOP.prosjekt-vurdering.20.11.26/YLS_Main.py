@@ -37,15 +37,15 @@ Press 0: to exit stats""")
             print("Invalid input")
 
 NPCs = [
-    Merchant(), Costumer(), Businessman()
+    Merchant(), Customer(), Businessman()
 ]
-# r.choice([Businessman(),Merchant(), Costumer()]
+# r.choice([Businessman(),Merchant(), Customer()]
 
 def npc_action(npc):
     if type(npc) == Merchant:
         npc.merchant_inventory()
         npc.buy()
-    elif type(npc) == Costumer:
+    elif type(npc) == Customer:
         npc.sell()
     elif type(npc) == Businessman:
         npc.deal()
@@ -87,12 +87,12 @@ try:
                     print("Invalid input")   
                 person_index += 1 
             else:
-                print("Theres no more costumers")
+                print("Theres no more Customers")
                 break
 
         print("Night has come")
         if rent <= gold:
-            gold =- rent
+            gold -= rent
             print(f"You paid rent for {rent} gold ")
         else:
             print()
