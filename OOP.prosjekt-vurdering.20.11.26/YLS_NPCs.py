@@ -29,8 +29,7 @@ def hagling(base_value, try_value, persuasion_or_prestige, obsession_status):
             haggle == 100
         print(f"You have a {haggle}% chance of succsesfully hagling npc.name")
         choice = input("""Do you want to proceed with your offer?
-Type 1: Yes, Type 0: No
-""")
+Type 1: Yes, Type 0: No\n""")
         if choice == "1":
             verdict = r.randint(1,100)
             if haggle >= verdict:
@@ -82,7 +81,7 @@ class Merchant(NPC):
             for i, Item in enumerate(self.items_for_sale):
                     print(f"{i + 1}: {Item.name}")
             try:
-                element_item = int(input("""Which item do you want to look at? (type 0 to exit the NPC): """))
+                element_item = int(input("""Which item do you want to look at? (type 0 to exit the NPC):\n"""))
                 if element_item == 0:
                     print('''"You dont want any more of my items?
 I guess ill just have to find someone else to buy them!"''')
@@ -146,7 +145,7 @@ class Customer(NPC):
             for i, Item in enumerate(inventory):
                 print(f"{i + 1}: {Item.name}")
             try:
-                element_item = int(input("""Which item do you want to sell?: """))
+                element_item = int(input("""Which item do you want to sell?:\n"""))
                 if element_item == 0:
                     print('''"You dont have anything!?
 well i guess ill just get going then
@@ -207,7 +206,7 @@ class Businessman(NPC):
         if gold < 10:
             print('"You dont have enough money sadly"')
         else:
-            choice = input("Type 1: Yes, Type 0: No")
+            choice = input("Type 1: Yes, Type 0: No\n")
             if choice == "1":
                 gold -= 10
                 print('You lose 10 gold\n"Nice your not gonna be disappointed"')
@@ -250,7 +249,7 @@ class Businessman(NPC):
         global inventory, gold
         print(f'''"Whats up my name is {self.name}, and I have a Deal for you"
     "If you can sell me all your items Ill pay you 1.5 times their worth"''')
-        choice = input("Sell all your items\nType 1: Yes, Type 0")
+        choice = input("Sell all your items\nType 1: Yes, Type 0\n")
         if choice == "1":
             print('"Great hand me over your Items"')
             total_gold = 0
@@ -271,7 +270,7 @@ class Businessman(NPC):
         global inventory, gold
         print(f'''"Hi my name is {self.name}, and I have a Deal for you"
     if you pay me 75 gold Ill give you a random Legendary Item"''') 
-        choice = input('"So what do you say, will you take the deal?"\nType 1: Yes, Type 0: No')
+        choice = input('"So what do you say, will you take the deal?"\nType 1: Yes, Type 0: No\n')
         if choice == "1":
             if gold < 75:
                 print("You dont have enough money sadly")

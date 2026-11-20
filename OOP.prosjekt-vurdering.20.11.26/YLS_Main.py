@@ -9,7 +9,7 @@ def view_inventory(inventory):
             print(f"{i + 1}: {Item.name}")
         try:
             element_item = int(input("""Which item do you want to inspect
-press 0: to close: """))
+press 0: to close:\n"""))
             if element_item == 0:
                 break
             else:
@@ -28,7 +28,7 @@ Rent: {rent}
 {"Persuasion: " + str(persuasion) if persuasion > 0 else "\033[A"}
 """)
         stats_action = input("""Press 1: to view your inventory
-Press 0: to exit stats""")
+Press 0: to exit stats\n""")
         if stats_action == "1":
             view_inventory(inventory)
         elif stats_action == "0":
