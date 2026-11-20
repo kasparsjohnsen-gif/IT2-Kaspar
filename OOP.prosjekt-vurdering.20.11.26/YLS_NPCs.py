@@ -132,7 +132,7 @@ I guess ill just have to find someone else to buy them!"''')
 {self.name} left''')
 
 
-class Costumer(NPC):
+class Customer(NPC):
     def __init__(self):
         super().__init__()
         self.spending_limit = r.randint(2,4)
