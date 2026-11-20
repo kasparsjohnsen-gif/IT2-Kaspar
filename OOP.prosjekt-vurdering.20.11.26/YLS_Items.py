@@ -24,10 +24,10 @@ def daily_abilities_check():
                 item.abilities(*item.params)
 
 class Item:
-    def __init__(self, name, rarity, catagory, base_buy_value, base_sell_value, info, prestige=0, persuasion=0, abilities=None, params=None, abilities_info=""):
+    def __init__(self, name, rarity, category, base_buy_value, base_sell_value, info, prestige=0, persuasion=0, abilities=None, params=None, abilities_info=""):
         self.name = name
         self.rarity = rarity
-        self.catagory = catagory
+        self.category = category
         self.base_buy_value = base_buy_value
         self.base_sell_value = base_sell_value
         self.info = info
@@ -163,7 +163,7 @@ def item_stats(choosen_item):
     print(f'''
 ¨¨{choosen_item.name}¨¨
 Rarity: {choosen_item.rarity}
-Itemtype: {choosen_item.catagory}
+Itemtype: {choosen_item.category}
 Resell value: {choosen_item.base_sell_value} gold 
 {"Prestige: " + str(choosen_item.prestige) if choosen_item.prestige > 0 else "\033[A"}
 {"Persuasion: " + str(choosen_item.persuasion) if choosen_item.persuasion > 0 else "\033[A"}

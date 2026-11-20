@@ -47,7 +47,6 @@ class NPC:
     def __init__(self):
         self.name = r.choice(names)
         self.obsession = r.choice(Obsession)
-        self.patience = r.randint(1,4)
 
 class Merchant(NPC):
     def __init__(self):
